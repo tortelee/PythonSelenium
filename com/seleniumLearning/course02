@@ -1,0 +1,32 @@
+webdriver的API和定位元素
+步骤：
+   1，打开浏览器  b = webdriver.Firefox()
+   2，打开网页  使用 get(url)
+             判断是不是这个网页
+   3，使用网页        -----> 元素定位
+        1）使用百度搜索,定位元素 可以使用id 和name 来进行定位
+        2）元素的清空操作  clear（）
+        3) 返回操作  back（）
+
+
+ ------------------------------
+ 元素名称          webdriver API              说明
+ ----- ------ ----- ----- ------
+ id               find_element_by_id()
+ name             find_element_by_name()
+ class name       find_element_by_class_name()
+ tag name
+ link text
+ partial link text
+ xpath
+ css selector
+
+ 元素操作方式
+ -----------------------------------------------
+ 方法                           说明
+ clear                        清除元素内容
+ send_keys                    模拟按键输入
+ click                         点击
+ submit                        提交表单
+
+ help(b.get)

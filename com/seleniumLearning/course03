@@ -1,0 +1,5 @@
+4,webdriver模块对元素定位                          说明
+               7) find text               如果找到的不止一个符合的，
+               8)partial text             会怎么样，那么就会报错！！
+               9)css xpath               很多没有名称，需要用这种path(fire
+                                          fox）浏览器有很多这种路径
