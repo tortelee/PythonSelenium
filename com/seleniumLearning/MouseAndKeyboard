@@ -1,0 +1,14 @@
+ Selenium WebDriver
+鼠标Actions
+       移动
+       拖拽
+       点击
+       双击
+       向上
+       向下
+键盘Actions
+       向上
+       向下
+       输入值
+将Action对象建立后，使用perform()函数来完成实际操作。如果不perform，那么
+这个动作对web端没有任何影响
