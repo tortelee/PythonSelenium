@@ -21,7 +21,7 @@ def test_mouser_move(url, menu_id):
     return 0
 
 
-test_mouser_move("http://www.cug.edu.cn/", "ww")
+# test_mouser_move("http://www.cug.edu.cn/", "ww")
 '''
 拖拽，指的是鼠标先点击左键，然后移动，然后松开
 '''
@@ -41,7 +41,7 @@ def test_mouser_drag(url, source, target):
     return 0
 
 
-test_mouser_drag("https://www.baidu.com/", "lg", "kw")
+# test_mouser_drag("https://www.baidu.com/", "lg", "kw")
 '''
 点击鼠标
 '''
@@ -60,12 +60,14 @@ def test_mouse_click(url, id_name):
     return 0
 
 
-test_mouse_click("https://www.baidu.com/", "su")
+# test_mouse_click("https://www.baidu.com/", "su")
 '''
 百度输入搜索
+-- 一个输入框
 acion会将操作放到self._actions（类型为list）队列中，
 并返回self实例本身，然后通过perform方法，依次执行队列中的操作。
 action可以触发事件，
+--  
 '''
 
 
@@ -73,7 +75,7 @@ def test_send_keys(url, context):
     b = webdriver.Firefox()
     b.get(url)
 
-    ins = b.find_element_by_id("kw")  #不需要往输入框输入数据，应该关联了，事件关联！！
+    ins = b.find_element_by_id("kw")  # 不需要往输入框输入数据，应该关联了，事件关联！！
     ins.send_keys(context)
 
     submit = b.find_element_by_id("su")
@@ -86,4 +88,28 @@ def test_send_keys(url, context):
     return 0
 
 
-test_send_keys(baidu, "你好啊")
+# test_send_keys(baidu, "你好啊")
+
+def test_send_two_keys(url, usrname, passwd):
+    b = webdriver.Firefox()
+    b.get(url)
+
+    ele1 = b.find_element_by_id("id")
+    ele2 = b.find_element_by_id("pwd")
+    ele3 = b.find_element_by_id("b_login")
+
+    action = ActionChains(b)
+    action.click(ele1)
+    action.send_keys(usrname)
+    action.click(ele2)
+    action.send_keys(passwd)
+    action.click(ele3)
+    action.perform()
+    b.close()
+    return 0
+
+
+nesmith = "http://www.newsmth.net/"
+urname = "tortelee"
+pwd = "lt19911218"
+test_send_two_keys(nesmith, urname, pwd)
