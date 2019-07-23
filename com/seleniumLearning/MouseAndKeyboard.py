@@ -111,5 +111,5 @@ def test_send_two_keys(url, usrname, passwd):
 
 nesmith = "http://www.newsmth.net/"
 urname = "tortelee"
-pwd = "lt19911218"
+pwd = "********"
 test_send_two_keys(nesmith, urname, pwd)
